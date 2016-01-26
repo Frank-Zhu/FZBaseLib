@@ -21,6 +21,9 @@ import butterknife.ButterKnife;
  * Why & What is modified:
  */
 public abstract class FZBaseFragment extends Fragment {
+    protected final String TAG = getClass().getSimpleName();
+
+    protected abstract int getFragmentLayoutRes();
 
     @Nullable
     @Override
@@ -36,5 +39,4 @@ public abstract class FZBaseFragment extends Fragment {
         ButterKnife.unbind(this);
     }
 
-    protected abstract int getFragmentLayoutRes();
 }
