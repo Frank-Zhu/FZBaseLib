@@ -9,6 +9,8 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        // dex突破65535的限制
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -24,6 +26,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:recyclerview-v7:23.1.1'
 
+    compile 'com.android.support:multidex:1.0.1'
     //View注解   代码地址-----> https://github.com/JakeWharton/butterknife
     compile 'com.jakewharton:butterknife:7.0.1'
 }

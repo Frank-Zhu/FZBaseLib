@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.frankzhu.appbaselibrary.utils.FZSharedPreferencesHelper;
+
 import butterknife.ButterKnife;
 
 /**
@@ -22,8 +24,15 @@ import butterknife.ButterKnife;
  */
 public abstract class FZBaseFragment extends Fragment {
     protected final String TAG = getClass().getSimpleName();
+    protected FZSharedPreferencesHelper mFZSharedPreferencesHelper;
 
     protected abstract int getFragmentLayoutRes();
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mFZSharedPreferencesHelper = FZSharedPreferencesHelper.getInstance();
+    }
 
     @Nullable
     @Override

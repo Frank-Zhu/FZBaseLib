@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.frankzhu.appbaselibrary.R;
+import com.frankzhu.appbaselibrary.utils.FZSharedPreferencesHelper;
 
 /**
  * Author:    ZhuWenWu
@@ -25,10 +26,12 @@ import com.frankzhu.appbaselibrary.R;
 public class FZBaseActionBarActivity extends AppCompatActivity {
     protected String TAG = FZBaseActionBarActivity.class.getSimpleName();
     protected ActionBar mActionBar;
+    protected FZSharedPreferencesHelper mFZSharedPreferencesHelper;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mFZSharedPreferencesHelper = FZSharedPreferencesHelper.getInstance();
         mActionBar = getSupportActionBar();
         showBackActionBar();
     }
