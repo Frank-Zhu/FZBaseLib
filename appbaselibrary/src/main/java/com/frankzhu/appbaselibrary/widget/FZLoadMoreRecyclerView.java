@@ -34,6 +34,10 @@ public class FZLoadMoreRecyclerView extends RecyclerView {
         this.onLoadNextListener = onLoadNextListener;
     }
 
+    public void setOnScrollListener(OnScrollListener onScrollListener) {
+        this.onScrollListener = onScrollListener;
+    }
+
     public void setLoadingEnable(boolean loadingEnable) {
         isLoadingEnable = loadingEnable;
     }
