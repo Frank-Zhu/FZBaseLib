@@ -260,8 +260,8 @@ public class FZSharedPreferencesHelper {
         // LOW-9 QUOTATION MARK unicode 201A and unicode 2017 they are used for
         // seprating the items in the list
         String[] mylist = TextUtils.split(sPreferences.getString(key, ""), "‚‗‚");
-        ArrayList<String> gottenlist = new ArrayList<String>(Arrays.asList(mylist));
-        ArrayList<Integer> gottenlist2 = new ArrayList<Integer>();
+        ArrayList<String> gottenlist = new ArrayList<>(Arrays.asList(mylist));
+        ArrayList<Integer> gottenlist2 = new ArrayList<>();
         for (String data : gottenlist) {
             gottenlist2.add(Integer.parseInt(data));
         }
@@ -270,7 +270,7 @@ public class FZSharedPreferencesHelper {
     }
 
     public void putListBoolean(String key, ArrayList<Boolean> marray) {
-        ArrayList<String> origList = new ArrayList<String>();
+        ArrayList<String> origList = new ArrayList<>();
         for (Boolean b : marray) {
             if (b) {
                 origList.add("true");
@@ -283,7 +283,7 @@ public class FZSharedPreferencesHelper {
 
     public ArrayList<Boolean> getListBoolean(String key) {
         ArrayList<String> origList = getList(key);
-        ArrayList<Boolean> mBools = new ArrayList<Boolean>();
+        ArrayList<Boolean> mBools = new ArrayList<>();
         for (String b : origList) {
             if (b.equals("true")) {
                 mBools.add(true);
