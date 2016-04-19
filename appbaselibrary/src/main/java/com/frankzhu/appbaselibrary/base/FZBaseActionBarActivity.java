@@ -51,13 +51,13 @@ public class FZBaseActionBarActivity extends AppCompatActivity {
     protected void showBackActionBar(int color) {
         showActionBar();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Drawable drawable = getResources().getDrawable(R.drawable.abc_ic_ab_back_material, null);
+            Drawable drawable = getResources().getDrawable(R.mipmap.abc_ic_ab_back_material, null);
             if (drawable != null) {
                 drawable.setTint(getResources().getColor(color));
             }
             mActionBar.setHomeAsUpIndicator(drawable);
         } else {
-            Drawable drawable = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
+            Drawable drawable = getResources().getDrawable(R.mipmap.abc_ic_ab_back_material);
             if (drawable != null) {
                 drawable.setColorFilter(getResources().getColor(color), PorterDuff.Mode.SRC_ATOP);
             }
@@ -80,7 +80,7 @@ public class FZBaseActionBarActivity extends AppCompatActivity {
     protected void showXActionBar(int color) {
         showActionBar();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Drawable drawable = getResources().getDrawable(R.drawable.abc_ic_clear_material, null);
+            Drawable drawable = getResources().getDrawable(R.mipmap.abc_ic_clear_material, null);
             if (drawable != null) {
                 drawable.setTint(getResources().getColor(color));
             }
@@ -88,7 +88,7 @@ public class FZBaseActionBarActivity extends AppCompatActivity {
                 mActionBar.setHomeAsUpIndicator(drawable);
             }
         } else {
-            Drawable drawable = getResources().getDrawable(R.drawable.abc_ic_clear_material);
+            Drawable drawable = getResources().getDrawable(R.mipmap.abc_ic_clear_material);
             if (drawable != null) {
                 drawable.setColorFilter(getResources().getColor(color), PorterDuff.Mode.SRC_ATOP);
             }

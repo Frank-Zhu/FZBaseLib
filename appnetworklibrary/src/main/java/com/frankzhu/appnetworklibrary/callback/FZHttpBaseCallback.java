@@ -3,9 +3,9 @@ package com.frankzhu.appnetworklibrary.callback;
 
 import com.frankzhu.appbaselibrary.log.FZLogUtils;
 
-import retrofit.Callback;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Author:    ZhuWenWu
@@ -22,13 +22,12 @@ public class FZHttpBaseCallback<T> implements Callback<T> {
     protected String TAG = FZHttpBaseCallback.class.getSimpleName();
 
     @Override
-    public void success(T t, Response response) {
-
+    public void onResponse(Call<T> call, Response<T> response) {
     }
 
     @Override
-    public void failure(RetrofitError error) {
-        FZLogUtils.e(TAG, "failure--> url = " + error.getUrl());
-        error.printStackTrace();
+    public void onFailure(Call<T> call, Throwable t) {
+        FZLogUtils.e(TAG, "failure--> url = " + call.request().url());
+        t.printStackTrace();
     }
 }

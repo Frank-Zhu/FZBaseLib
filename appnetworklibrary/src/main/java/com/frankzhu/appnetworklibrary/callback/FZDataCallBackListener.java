@@ -1,6 +1,6 @@
 package com.frankzhu.appnetworklibrary.callback;
 
-import retrofit.RetrofitError;
+import retrofit2.Call;
 
 /**
  * Author:    ZhuWenWu
@@ -20,13 +20,13 @@ public interface FZDataCallBackListener<T> {
      *
      * @param data 返回的数据
      */
-    void onSuccess(T data);
+    void onResponse(Call<T> call, T data);
 
     /**
      * HTTP 请求失败回调
      *
      * @param isNetError 是否网络错误 true 没有网络连接
-     * @param error      RetrofitError
+     * @param t          Throwable
      */
-    void onFail(boolean isNetError, RetrofitError error);
+    void onFailure(boolean isNetError, Throwable t);
 }

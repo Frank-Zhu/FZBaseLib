@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion Integer.parseInt(ANDROID_BUILD_COMPILE_SDK_VERSION)
+    buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion 8
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion Integer.parseInt(MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(TARGET_SDK_VERSION)
+        versionCode Integer.parseInt(VERSION_CODE)
+        versionName VERSION_NAME
         // dex突破65535的限制
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
@@ -23,11 +23,10 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.2.0'
-    compile 'com.android.support:recyclerview-v7:23.2.0'
+    testCompile testDependencies.junit
+    compile supportDependencies.appCompat
+    compile supportDependencies.recyclerView
 
-    compile 'com.android.support:multidex:1.0.1'
-    //View注解   代码地址-----> https://github.com/JakeWharton/butterknife
-    compile 'com.jakewharton:butterknife:7.0.1'
+    compile thirdDependencies.multidex
+    compile thirdDependencies.butterKnife
 }

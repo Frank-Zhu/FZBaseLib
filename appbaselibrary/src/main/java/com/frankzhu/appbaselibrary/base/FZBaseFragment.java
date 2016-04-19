@@ -39,7 +39,7 @@ public abstract class FZBaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(getFragmentLayoutRes(), container, false);
         ButterKnife.bind(this, rootView);
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return rootView;
     }
 
     @Override

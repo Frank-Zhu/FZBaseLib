@@ -1,0 +1,32 @@
+ext {
+    //Version
+    supportLibrary = '23.2.1'
+
+    //Support Libraries dependencies
+    testDependencies = [
+            junit: "junit:junit:4.12",
+    ]
+
+    //Support Libraries dependencies
+    supportDependencies = [
+            design           : "com.android.support:design:${supportLibrary}",
+            recyclerView     : "com.android.support:recyclerview-v7:${supportLibrary}",
+            cardView         : "com.android.support:cardview-v7:${supportLibrary}",
+            appCompat        : "com.android.support:appcompat-v7:${supportLibrary}",
+            supportAnnotation: "com.android.support:support-annotations:${supportLibrary}",
+    ]
+
+    //Third Libraries dependencies
+    thirdDependencies = [
+            multidex     : "com.android.support:multidex:1.0.1",
+            //View注解   代码地址-----> https://github.com/JakeWharton/butterknife
+            butterKnife  : "com.jakewharton:butterknife:7.0.1",
+            //API网络请求注解库    代码地址-----> https://github.com/square/retrofit
+            retrofit     : "com.squareup.retrofit2:retrofit:2.0.1",
+            converterGson: "com.squareup.retrofit2:converter-gson:2.0.1",
+            //网络请求库 代码地址-----> https://github.com/square/okhttp
+            okhttp       : "com.squareup.okhttp3:okhttp:3.2.0",
+            //EventBus 代码地址-----> https://github.com/greenrobot/EventBus
+            eventBus     : "org.greenrobot:eventbus:3.0.0",
+    ]
+}
