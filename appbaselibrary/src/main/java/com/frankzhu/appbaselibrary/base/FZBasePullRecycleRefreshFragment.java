@@ -47,8 +47,7 @@ public abstract class FZBasePullRecycleRefreshFragment extends FZBasePullRefresh
     }
 
     @Override
-    protected void onInitFragmentData() {
+    protected void onLazyLoad() {
 
     }
-
 }
