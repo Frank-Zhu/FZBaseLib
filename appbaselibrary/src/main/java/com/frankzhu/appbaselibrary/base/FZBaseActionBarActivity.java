@@ -1,5 +1,6 @@
 package com.frankzhu.appbaselibrary.base;
 
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -32,15 +33,34 @@ public class FZBaseActionBarActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mFZSharedPreferencesHelper = FZSharedPreferencesHelper.getInstance();
+        setUpToolBar();
+        if (getIntent() != null) {
+            getArgumentsForActivityIntent(getIntent());
+        }
+    }
+
+    protected void setUpToolBar() {
         mActionBar = getSupportActionBar();
-        showBackActionBar();
+        if (mActionBar != null) {
+            mActionBar.setElevation(0);
+            showBackActionBar();
+        }
+    }
+
+    /**
+     * 获取 Activity Intent 传递的参数
+     *
+     * @param intent Activity Intent
+     */
+    protected void getArgumentsForActivityIntent(Intent intent) {
+
     }
 
     /**
      * 显示返回按钮 <-
      */
     protected void showBackActionBar() {
-        showBackActionBar(android.R.color.white);
+        showBackActionBar(R.color.title_color);
     }
 
     /**
@@ -50,18 +70,20 @@ public class FZBaseActionBarActivity extends AppCompatActivity {
      */
     protected void showBackActionBar(int color) {
         showActionBar();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Drawable drawable = getResources().getDrawable(R.mipmap.abc_ic_ab_back_material, null);
-            if (drawable != null) {
-                drawable.setTint(getResources().getColor(color));
+        if (mActionBar != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                Drawable drawable = getResources().getDrawable(R.mipmap.abc_ic_ab_back_material, null);
+                if (drawable != null) {
+                    drawable.setTint(getResources().getColor(color));
+                }
+                mActionBar.setHomeAsUpIndicator(drawable);
+            } else {
+                Drawable drawable = getResources().getDrawable(R.mipmap.abc_ic_ab_back_material);
+                if (drawable != null) {
+                    drawable.setColorFilter(getResources().getColor(color), PorterDuff.Mode.SRC_ATOP);
+                }
+                mActionBar.setHomeAsUpIndicator(drawable);
             }
-            mActionBar.setHomeAsUpIndicator(drawable);
-        } else {
-            Drawable drawable = getResources().getDrawable(R.mipmap.abc_ic_ab_back_material);
-            if (drawable != null) {
-                drawable.setColorFilter(getResources().getColor(color), PorterDuff.Mode.SRC_ATOP);
-            }
-            mActionBar.setHomeAsUpIndicator(drawable);
         }
     }
 
@@ -69,7 +91,7 @@ public class FZBaseActionBarActivity extends AppCompatActivity {
      * 显示关闭按钮 X
      */
     protected void showXActionBar() {
-        showXActionBar(android.R.color.white);
+        showXActionBar(R.color.title_color);
     }
 
     /**

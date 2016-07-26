@@ -1,5 +1,9 @@
 package com.frankzhu.appbaselibrary.base;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.view.View;
+
 /**
  * Author:    ZhuWenWu
  * Version    V1.0
@@ -14,10 +18,17 @@ package com.frankzhu.appbaselibrary.base;
 public abstract class FZBaseViewPagerFragment extends FZBaseFragment {
     protected boolean isPrepared = false;//页面是否已初始化
     protected boolean isVisible = false;//页面是否显示
-    private boolean isInitFinish = false;//数据是否已初始化
+    protected boolean isInitFinish = false;//数据是否已初始化
 
     public void setInitFinish(boolean isInitFinish) {
         this.isInitFinish = isInitFinish;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        isPrepared = true;
+        onFragmentVisible();
     }
 
     @Override

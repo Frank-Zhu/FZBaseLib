@@ -8,20 +8,18 @@ import butterknife.ButterKnife;
 /**
  * Author:    ZhuWenWu
  * Version    V1.0
- * Date:      16/1/26  下午6:31.
- * Description: ViewHolder基类
+ * Date:      2016/6/15  11:46.
+ * Description: 空ViewHolder
  * Modification  History:
  * Date         	Author        		Version        	Description
  * -----------------------------------------------------------------------------------
- * 16/1/26        ZhuWenWu            1.0                    1.0
+ * 2016/6/15        ZhuWenWu           1.0                    1.0
  * Why & What is modified:
  */
-public abstract class FZBaseViewHolder<T> extends RecyclerView.ViewHolder {
+public class SpaceViewHolder extends RecyclerView.ViewHolder {
 
-    public FZBaseViewHolder(View itemView) {
+    public SpaceViewHolder(View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
     }
-
-    public abstract void bindViewData(T data);
 }

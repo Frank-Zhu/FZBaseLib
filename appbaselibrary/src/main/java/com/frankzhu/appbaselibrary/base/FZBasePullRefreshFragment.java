@@ -13,7 +13,7 @@ import com.frankzhu.appbaselibrary.R;
  * Author:    ZhuWenWu
  * Version    V1.0
  * Date:      16/1/26  下午4:12.
- * Description:
+ * Description: 下拉刷新View Fragment
  * Modification  History:
  * Date         	Author        		Version        	Description
  * -----------------------------------------------------------------------------------

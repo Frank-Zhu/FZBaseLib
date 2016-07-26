@@ -76,14 +76,69 @@ public class FZFileHelper {
     }
 
     /**
+     * 读取文件内容 只适合读取小文件
+     *
+     * @param file 文件对象
+     * @return 文件字符串
+     */
+    public static String readFileToString(File file) {
+        String res = "";
+        FileInputStream inFile;
+        int length;
+        try {
+            inFile = new FileInputStream(file);
+            length = inFile.available();
+            byte[] buffer = new byte[length];
+            int len;
+            len = inFile.read(buffer);
+            inFile.close();
+            if (len > 0) {
+                res = new String(buffer, 0, len, "UTF-8");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+
+    /**
      * 将字符串写入文件 适合写小文件
      *
      * @param filePath 文件全路径
      * @param message  需要写入文件的字符串
      */
     public static void writeInfoToFile(String filePath, String message) {
+        writeInfoToFile(filePath, message, false);
+    }
+
+    /**
+     * 将字符串写入文件 适合写小文件
+     *
+     * @param filePath 文件全路径
+     * @param message  需要写入文件的字符串
+     * @param isAppend 是否追加
+     */
+    public static void writeInfoToFile(String filePath, String message, boolean isAppend) {
         try {
-            FileOutputStream out = new FileOutputStream(filePath);
+            FileOutputStream out = new FileOutputStream(filePath, isAppend);
+            byte[] bytes = message.getBytes();
+            out.write(bytes);
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 将字符串写入文件 适合写小文件
+     *
+     * @param file    文件句柄
+     * @param message 需要写入文件的字符串
+     * @param append  是否追加
+     */
+    public static void writeInfoToFile(File file, String message, boolean append) {
+        try {
+            FileOutputStream out = new FileOutputStream(file, append);
             byte[] bytes = message.getBytes();
             out.write(bytes);
             out.close();
@@ -99,7 +154,7 @@ public class FZFileHelper {
      * @return true:存在 false:不存在
      */
     public static boolean isFileExit(String filePath) {
-        return new File(filePath).exists();
+        return filePath != null && !filePath.isEmpty() && new File(filePath).exists();
     }
 
     /**

@@ -1,0 +1,56 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="FZBaseAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:windowActionBarOverlay">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:actionBarItemBackground">@null</item>
+        <item name="android:windowBackground">@color/window_back_ground</item>
+        <item name="android:actionModeCloseDrawable">@mipmap/ic_action_bar_close</item>
+        <item name="android:textColorPrimary">@color/title_color</item>
+        <item name="actionBarPopupTheme">@style/FZBaseAppTheme.PopupTheme</item>
+        <item name="actionMenuTextColor">@color/title_color</item>
+        <item name="android:listDivider">@mipmap/ic_list_divider</item>
+        <item name="colorControlNormal">@color/title_color</item>
+        <item name="colorButtonNormal">@color/primary</item>
+        <item name="alertDialogTheme">@style/FZBaseAppTheme.AlertDialogStyle</item>
+        <item name="android:alertDialogTheme">@style/FZBaseAppTheme.AlertDialogStyle</item>
+    </style>
+
+    <style name="FZBaseAppTheme.ToolBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@color/gary_primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:textColorPrimary">@color/title_color</item>
+        <item name="actionMenuTextColor">@color/title_color</item>
+        <item name="android:actionModeCloseDrawable">@mipmap/ic_action_bar_close</item>
+        <item name="colorControlNormal">@color/title_color</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:listDivider">@mipmap/ic_list_divider</item>
+        <item name="colorButtonNormal">@color/primary</item>
+        <item name="alertDialogTheme">@style/FZBaseAppTheme.AlertDialogStyle</item>
+        <item name="android:alertDialogTheme">@style/FZBaseAppTheme.AlertDialogStyle</item>
+    </style>
+
+    <style name="FZBaseAppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="FZBaseAppTheme.ButtonTheme" parent="Theme.AppCompat.Light">
+        <item name="android:colorControlHighlight">@color/color_control_highlight</item>
+        <item name="android:colorButtonNormal">@color/primary</item>
+    </style>
+
+    <style name="FZBaseAppTheme.RadioButtonTheme" parent="Theme.AppCompat.Light">
+        <item name="android:colorControlNormal">@color/primary</item>
+        <item name="android:colorControlActivated">@color/primary</item>
+    </style>
+</resources>

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.frankzhu.appbaselibrary.utils.FZSharedPreferencesHelper;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Author:    ZhuWenWu
@@ -25,6 +26,7 @@ import butterknife.ButterKnife;
 public abstract class FZBaseFragment extends Fragment {
     protected final String TAG = getClass().getSimpleName();
     protected FZSharedPreferencesHelper mFZSharedPreferencesHelper;
+    private Unbinder unbinder;
 
     protected abstract int getFragmentLayoutRes();
 
@@ -32,20 +34,30 @@ public abstract class FZBaseFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mFZSharedPreferencesHelper = FZSharedPreferencesHelper.getInstance();
+        if (getArguments() != null) {
+            getArgumentsForFragmentIntent(getArguments());
+        }
+    }
+
+    /**
+     * 获取 Fragment 传递的数据
+     *
+     * @param bundle Fragment Bundle
+     */
+    protected void getArgumentsForFragmentIntent(Bundle bundle) {
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(getFragmentLayoutRes(), container, false);
-        ButterKnife.bind(this, rootView);
+        unbinder = ButterKnife.bind(this, rootView);
         return rootView;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
-
 }

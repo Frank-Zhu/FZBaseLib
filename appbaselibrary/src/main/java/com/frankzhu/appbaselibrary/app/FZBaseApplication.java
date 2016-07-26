@@ -17,7 +17,7 @@ import com.frankzhu.appbaselibrary.utils.FZSharedPreferencesHelper;
  * Why & What is modified:
  */
 public class FZBaseApplication extends MultiDexApplication {
-    private static Context sContext;
+    protected static Context sContext;
 
     @Override
     public void onCreate() {
@@ -37,5 +37,9 @@ public class FZBaseApplication extends MultiDexApplication {
 
     public static Context getContext() {
         return sContext;
+    }
+
+    public String getResString(int resId) {
+        return getString(resId);
     }
 }

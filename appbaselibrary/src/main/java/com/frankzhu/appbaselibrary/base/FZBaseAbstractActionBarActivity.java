@@ -21,12 +21,16 @@ public abstract class FZBaseAbstractActionBarActivity extends FZBaseActionBarAct
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base_fragment);
+        setContentView(getContentLayoutRes());
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, getFragment())
                     .commit();
         }
+    }
+
+    protected int getContentLayoutRes() {
+        return R.layout.activity_base_fragment;
     }
 
     protected abstract Fragment getFragment();

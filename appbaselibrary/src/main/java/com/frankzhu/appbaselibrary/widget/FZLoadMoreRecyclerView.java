@@ -76,13 +76,10 @@ public class FZLoadMoreRecyclerView extends RecyclerView {
             int visibleItemCount = layoutManager.getChildCount();
             int totalItemCount = layoutManager.getItemCount();
 
-            int lastVisibleItemPosition = -1;
             int firstVisibleItemPosition = -1;
             if (layoutManagerType == null) {
                 if (layoutManager instanceof LinearLayoutManager) {
                     layoutManagerType = LAYOUT_MANAGER_TYPE.LINEAR;
-                } else if (layoutManager instanceof GridLayoutManager) {
-                    layoutManagerType = LAYOUT_MANAGER_TYPE.GRID;
                 } else {
                     throw new RuntimeException("Unsupported LayoutManager used. Valid ones are LinearLayoutManager, GridLayoutManager");
                 }
@@ -91,11 +88,9 @@ public class FZLoadMoreRecyclerView extends RecyclerView {
             switch (layoutManagerType) {
                 case LINEAR:
                     firstVisibleItemPosition = ((LinearLayoutManager) layoutManager).findFirstVisibleItemPosition();
-                    lastVisibleItemPosition = ((LinearLayoutManager) layoutManager).findLastVisibleItemPosition();
                     break;
                 case GRID:
                     firstVisibleItemPosition = ((GridLayoutManager) layoutManager).findFirstVisibleItemPosition();
-                    lastVisibleItemPosition = ((GridLayoutManager) layoutManager).findLastVisibleItemPosition();
                     break;
             }
 

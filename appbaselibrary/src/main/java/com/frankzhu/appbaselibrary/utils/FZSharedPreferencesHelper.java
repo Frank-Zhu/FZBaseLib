@@ -163,7 +163,7 @@ public class FZSharedPreferencesHelper {
     }
 
     public long getLong(String key) {
-        return sPreferences.getLong(key, 0l);
+        return sPreferences.getLong(key, 0L);
     }
 
     public String getString(String key) {

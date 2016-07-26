@@ -15,6 +15,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.provider.Settings;
+import android.support.annotation.RequiresPermission;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -25,6 +26,7 @@ import android.widget.EditText;
 
 import java.io.File;
 import java.lang.reflect.Field;
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
@@ -111,6 +113,7 @@ public class FZUtils {
      * @param context     上下文
      * @param phoneNumber 电话号码
      */
+    @RequiresPermission("android.permission.CALL_PHONE")
     public static void call(Context context, String phoneNumber) {
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             return;
@@ -182,6 +185,41 @@ public class FZUtils {
             }
         }
         return view;
+    }
+
+    /**
+     * 设置View 是否显示
+     *
+     * @param view   需要设置的View对象
+     * @param isGone 是否隐藏
+     * @param <V>    V
+     * @return V 当前View
+     */
+    public static <V extends View> V setInvisible(V view, boolean isGone) {
+        if (view != null) {
+            if (isGone) {
+                if (View.INVISIBLE != view.getVisibility()) {
+                    view.setVisibility(View.INVISIBLE);
+                }
+            } else {
+                if (View.VISIBLE != view.getVisibility()) {
+                    view.setVisibility(View.VISIBLE);
+                }
+            }
+        }
+        return view;
+    }
+
+    /**
+     * 多个view隐藏或显示
+     *
+     * @param gone  true 隐藏；false 显示
+     * @param views 多个view对象
+     */
+    public static void setViewsInvisible(boolean gone, View... views) {
+        for (View view : views) {
+            setInvisible(view, gone);
+        }
     }
 
     /**
@@ -299,7 +337,7 @@ public class FZUtils {
     }
 
     /**
-     * 获取APP的版本号
+     * 获取APP的版本号名称
      *
      * @param context 上下文
      * @return String
@@ -313,6 +351,22 @@ public class FZUtils {
             e.printStackTrace();
         }
         return version;
+    }
+
+    /**
+     * 获取APP的版本号
+     *
+     * @param context 上下文
+     * @return int
+     */
+    public static int getVersionCode(Context context) {
+        int versionCode = 0;
+        try {
+            versionCode = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;  // 获取软件版本号
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return versionCode;
     }
 
     /**
@@ -423,4 +477,41 @@ public class FZUtils {
                 .getSystemService(Context.INPUT_METHOD_SERVICE);
         inputManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
+
+    private static final double EARTH_RADIUS = 6378137.0;
+
+    public static double getDistance(double longitude1, double latitude1,
+                                     double longitude2, double latitude2) {
+        double Lat1 = rad(latitude1);
+        double Lat2 = rad(latitude2);
+        double a = Lat1 - Lat2;
+        double b = rad(longitude1) - rad(longitude2);
+        double s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2)
+                + Math.cos(Lat1) * Math.cos(Lat2)
+                * Math.pow(Math.sin(b / 2), 2)));
+        s = s * EARTH_RADIUS;
+        s = Math.round(s * 10000) / 10000;
+        return s;
+    }
+
+    private static double rad(double d) {
+        return d * Math.PI / 180.0;
+    }
+
+    public static String getDistanceDisplay(double longitude1, double latitude1, double longitude2, double latitude2) {
+        if (longitude1 > 0.01 && latitude1 > 0.01 && longitude2 > 0.01 && latitude2 > 0.01) {
+            double distance = getDistance(longitude1, latitude1, longitude2, latitude2);
+            distance = Math.floor(distance);
+            DecimalFormat df = new DecimalFormat("#");
+            if (distance <= 1000) {
+                return df.format(distance) + "m";
+            } else {
+                distance = Math.floor(distance / 1000);
+                return df.format(distance) + "km";
+            }
+        } else {
+            return "";
+        }
+    }
+
 }

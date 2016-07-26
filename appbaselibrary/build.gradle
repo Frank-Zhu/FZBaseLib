@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'android-apt'
 
 android {
     compileSdkVersion Integer.parseInt(ANDROID_BUILD_COMPILE_SDK_VERSION)
@@ -23,7 +25,11 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    apt thirdDependencies.butterKnifeApt
+
     testCompile testDependencies.junit
+
     compile supportDependencies.appCompat
     compile supportDependencies.recyclerView
 

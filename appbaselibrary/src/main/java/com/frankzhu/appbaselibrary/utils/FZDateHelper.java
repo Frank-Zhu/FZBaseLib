@@ -119,6 +119,17 @@ public class FZDateHelper {
      * @param pattern 要转化为的字符串格式（如：yyyy-MM-dd HH:mm:ss）
      * @return 返回日期的毫秒数
      */
+    public static long string2Millis(String str) {
+        return string2Millis(str, "yyyy-MM-dd HH:mm:ss");
+    }
+
+    /**
+     * 字符串解析成毫秒数
+     *
+     * @param str     要转化的日期
+     * @param pattern 要转化为的字符串格式（如：yyyy-MM-dd HH:mm:ss）
+     * @return 返回日期的毫秒数
+     */
     public static long string2Millis(String str, String pattern) {
         SimpleDateFormat format = new SimpleDateFormat(pattern,
                 Locale.getDefault());
@@ -178,6 +189,10 @@ public class FZDateHelper {
 
     public static long oneHourMillis = 60 * 60 * 1000; // 一小时的毫秒数
     public static long oneDayMillis = 24 * oneHourMillis; // 一天的毫秒数
+
+    public static String millisToLifeString(String date) {
+        return millisToLifeString(string2Millis(date));
+    }
 
     /**
      * 转换当前时间为易用时间格式

@@ -13,7 +13,7 @@ import java.util.List;
  * Author:    ZhuWenWu
  * Version    V1.0
  * Date:      16/1/26  下午5:38.
- * Description:
+ * Description: 列表Item适配器基础类
  * Modification  History:
  * Date         	Author        		Version        	Description
  * -----------------------------------------------------------------------------------
@@ -30,6 +30,10 @@ public abstract class FZBaseAbstractAdapter<T> extends RecyclerView.Adapter<Recy
     public FZBaseAbstractAdapter(Context context) {
         this.mContext = context;
         this.mLayoutInflater = LayoutInflater.from(mContext);
+    }
+
+    public Context getContext() {
+        return mContext;
     }
 
     public List<T> getDataList() {
@@ -115,7 +119,7 @@ public abstract class FZBaseAbstractAdapter<T> extends RecyclerView.Adapter<Recy
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof FZBaseViewHolder) {
-            ((FZBaseViewHolder) holder).bindViewData(getItemData(position));
+            ((FZBaseViewHolder<T>) holder).bindViewData(getItemData(position));
         }
     }
 }

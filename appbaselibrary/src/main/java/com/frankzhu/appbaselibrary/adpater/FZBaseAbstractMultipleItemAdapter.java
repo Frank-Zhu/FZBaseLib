@@ -1,6 +1,7 @@
 package com.frankzhu.appbaselibrary.adpater;
 
 import android.content.Context;
+import android.support.annotation.IntDef;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
@@ -18,10 +19,14 @@ import java.util.List;
  * Why & What is modified:
  */
 public abstract class FZBaseAbstractMultipleItemAdapter<T> extends FZBaseAbstractAdapter<T> {
-    public enum ITEM_TYPE {
-        ITEM_TYPE_HEADER,
-        ITEM_TYPE_BOTTOM
+    private static final int ITEM_TYPE_HEADER = 1;
+    private static final int ITEM_TYPE_BOTTOM = 2;
+    private static final int ITEM_TYPE_CONTENT = 3;
+
+    @IntDef({ITEM_TYPE_HEADER, ITEM_TYPE_BOTTOM})
+    @interface ItemType {
     }
+
 
     protected int mHeaderCount;//头部View个数
     protected int mBottomCount;//底部View个数
@@ -38,6 +43,14 @@ public abstract class FZBaseAbstractMultipleItemAdapter<T> extends FZBaseAbstrac
         this.mBottomCount = bottomCount;
     }
 
+    public int getHeaderCount() {
+        return mHeaderCount;
+    }
+
+    public int getBottomCount() {
+        return mBottomCount;
+    }
+
     public boolean isHeaderView(int position) {
         return mHeaderCount != 0 && position < mHeaderCount;
     }
@@ -48,9 +61,9 @@ public abstract class FZBaseAbstractMultipleItemAdapter<T> extends FZBaseAbstrac
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (viewType == ITEM_TYPE.ITEM_TYPE_HEADER.ordinal()) {
+        if (viewType == ITEM_TYPE_HEADER) {
             return onCreateHeaderView(parent);
-        } else if (viewType == ITEM_TYPE.ITEM_TYPE_BOTTOM.ordinal()) {
+        } else if (viewType == ITEM_TYPE_BOTTOM) {
             return onCreateBottomView(parent);
         } else {
             return onCreateContentView(parent, viewType);
@@ -60,9 +73,9 @@ public abstract class FZBaseAbstractMultipleItemAdapter<T> extends FZBaseAbstrac
     @Override
     public int getItemViewType(int position) {
         if (isHeaderView(position)) {//头部View
-            return ITEM_TYPE.ITEM_TYPE_HEADER.ordinal();
+            return ITEM_TYPE_HEADER;
         } else if (isBottomView(position)) {//底部View
-            return ITEM_TYPE.ITEM_TYPE_BOTTOM.ordinal();
+            return ITEM_TYPE_BOTTOM;
         } else {
             return getContentViewType(position);
         }
@@ -134,9 +147,13 @@ public abstract class FZBaseAbstractMultipleItemAdapter<T> extends FZBaseAbstrac
         }
     }
 
-    public abstract int getContentViewType(int position);
+    public int getContentViewType(int position) {
+        return ITEM_TYPE_CONTENT;
+    }
 
-    public abstract RecyclerView.ViewHolder onCreateHeaderView(ViewGroup parent);//创建头部View
+    public RecyclerView.ViewHolder onCreateHeaderView(ViewGroup parent) {//创建头部View
+        return null;
+    }
 
     public abstract RecyclerView.ViewHolder onCreateContentView(ViewGroup parent, int viewType);//创建中间内容View
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  涉及到的字体大小  -->
+    <dimen name="title_text_size">18sp</dimen>
+    <dimen name="primary_text_size">16sp</dimen>
+    <dimen name="normal_text_size">14sp</dimen>
+    <dimen name="second_text_size">12sp</dimen>
+    <dimen name="small_text_size">10sp</dimen>
+
+    <!--  分割线高度  -->
+    <dimen name="larger_divider_height">10px</dimen>
+    <dimen name="small_divider_height">1px</dimen>
+    <dimen name="bottom_divider_height">1dp</dimen>
+
+    <!--  涉及到的View间距大小  -->
+    <dimen name="root_view_margin">12dp</dimen>
+    <dimen name="middle_view_margin">8dp</dimen>
+    <dimen name="small_view_margin">4dp</dimen>
+    <dimen name="larger_view_margin">16dp</dimen>
+    <dimen name="larger_larger_view_margin">20dp</dimen>
+    <dimen name="small_drawable_padding">4dp</dimen>
+    <dimen name="drawable_padding">8dp</dimen>
+    <dimen name="larger_drawable_padding">16dp</dimen>
+    <dimen name="text_view_margin">2dp</dimen>
+
+    <dimen name="toast_vertical_margin">80dp</dimen>
+
+    <dimen name="card_margin_horizontal">-3dp</dimen>
+    <dimen name="card_compat_padding">8dp</dimen>
+
+    <dimen name="small_button_height">48dp</dimen>
+    <dimen name="button_height">58dp</dimen>
+    <dimen name="tabs_height">48dp</dimen>
+    <dimen name="card_corner_radius">4dp</dimen>
+</resources>

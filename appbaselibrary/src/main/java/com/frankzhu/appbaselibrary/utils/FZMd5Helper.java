@@ -15,6 +15,39 @@ import java.security.MessageDigest;
  */
 public class FZMd5Helper {
 
+    public static String encrypt(String password) {
+        if (password == null)
+            return null;
+        try {
+            byte[] bytes = password.getBytes("UTF8");
+            return encrypt(bytes);
+
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static String encrypt(byte[] password) {
+        if (password == null)
+            return null;
+        if (password.length == 0)
+            return "";
+        byte[] md5 = MD5(password);
+        if (md5 == null)
+            return null;
+        return FZBase64Helper.encode(md5);
+    }
+
+    private static byte[] MD5(byte[] source) {
+        try {
+            MessageDigest md5 = MessageDigest.getInstance("MD5");
+            md5.update(source);
+            return md5.digest();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     public static String getMessageDigest(String buffer) {
         return getMessageDigest(buffer.getBytes());
     }

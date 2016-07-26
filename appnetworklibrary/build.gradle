@@ -24,5 +24,6 @@ dependencies {
     compile project(':appbaselibrary')
     compile thirdDependencies.retrofit
     compile thirdDependencies.converterGson
+    compile thirdDependencies.adapterRxjava
     compile thirdDependencies.okhttp
 }
