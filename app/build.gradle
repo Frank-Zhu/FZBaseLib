@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion Integer.parseInt(ANDROID_BUILD_COMPILE_SDK_VERSION)
@@ -22,5 +23,9 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile testDependencies.junit
+    annotationProcessor thirdDependencies.butterKnifeApt
+
+    compile project(':appnetworklibrary')
+
     compile supportDependencies.appCompat
 }
