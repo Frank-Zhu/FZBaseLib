@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.frankzhu.appbaselibrary.base.FZBaseFragment;
+import com.frankzhu.appbaselibrary.base.FZBaseViewPagerFragment;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * Author:    ZhuWenWu
  * Version    V1.0
  * Date:      16/1/27  上午11:09.
- * Description:
+ * Description: View Pager Base Adapter
  * Modification  History:
  * Date         	Author        		Version        	Description
  * -----------------------------------------------------------------------------------
@@ -20,15 +20,15 @@ import java.util.ArrayList;
  * Why & What is modified:
  */
 public class FZBaseViewPagerAdapter extends FragmentPagerAdapter {
-    private final ArrayList<FZBaseFragment> mFragments;
+    private final ArrayList<FZBaseViewPagerFragment> mFragments;
     private String[] mTitles;
 
-    public FZBaseViewPagerAdapter(FragmentManager fm, ArrayList<FZBaseFragment> fragments) {
+    public FZBaseViewPagerAdapter(FragmentManager fm, ArrayList<FZBaseViewPagerFragment> fragments) {
         super(fm);
         mFragments = fragments;
     }
 
-    public FZBaseViewPagerAdapter(FragmentManager fm, ArrayList<FZBaseFragment> fragments, String[] titles) {
+    public FZBaseViewPagerAdapter(FragmentManager fm, ArrayList<FZBaseViewPagerFragment> fragments, String[] titles) {
         super(fm);
         mFragments = fragments;
         mTitles = titles;

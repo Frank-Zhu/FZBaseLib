@@ -26,15 +26,19 @@ public abstract class FZBaseAbstractToolBarActivity extends FZBaseActionBarActiv
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base_tool_bar);
+        setContentView(getContentLayoutRes());
         ButterKnife.bind(this);
         mToolBar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(mToolBar);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fl_content, getFragment())
+                    .replace(R.id.fl_content, getFragment())
                     .commit();
         }
+    }
+
+    protected int getContentLayoutRes() {
+        return R.layout.activity_base_tool_bar;
     }
 
     protected abstract Fragment getFragment();

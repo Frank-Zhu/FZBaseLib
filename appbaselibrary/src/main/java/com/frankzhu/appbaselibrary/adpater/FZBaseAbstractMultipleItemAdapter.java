@@ -23,7 +23,7 @@ public abstract class FZBaseAbstractMultipleItemAdapter<T> extends FZBaseAbstrac
     private static final int ITEM_TYPE_BOTTOM = 2;
     private static final int ITEM_TYPE_CONTENT = 3;
 
-    @IntDef({ITEM_TYPE_HEADER, ITEM_TYPE_BOTTOM})
+    @IntDef({ITEM_TYPE_HEADER, ITEM_TYPE_BOTTOM, ITEM_TYPE_CONTENT})
     @interface ItemType {
     }
 

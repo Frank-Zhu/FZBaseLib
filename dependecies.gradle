@@ -26,17 +26,34 @@ ext {
             butterKnife     : "com.jakewharton:butterknife:8.2.1",
             butterKnifeApt  : "com.jakewharton:butterknife-compiler:8.2.1",
             //API网络请求注解库    代码地址-----> https://github.com/square/retrofit
-            retrofit        : "com.squareup.retrofit2:retrofit:2.0.1",
-            converterGson   : "com.squareup.retrofit2:converter-gson:2.0.1",
-            adapterRxjava   : "com.squareup.retrofit2:adapter-rxjava:2.0.1",
+            retrofit        : "com.squareup.retrofit2:retrofit:2.1.0",
+            converterGson   : "com.squareup.retrofit2:converter-gson:2.1.0",
+            adapterRxjava   : "com.squareup.retrofit2:adapter-rxjava:2.1.0",
             //异步处理库    代码地址-----> https://github.com/ReactiveX/RxAndroid
-            rxJava          : "io.reactivex:rxjava:1.1.5",
-            rxAndroid       : "io.reactivex:rxandroid:1.2.0",
+            rxJava          : "io.reactivex:rxjava:1.1.6",
+            rxAndroid       : "io.reactivex:rxandroid:1.2.1",
             //网络请求库 代码地址-----> https://github.com/square/okhttp
-            okhttp          : "com.squareup.okhttp3:okhttp:3.2.0",
+            okhttp          : "com.squareup.okhttp3:okhttp:3.4.1",
             //EventBus 代码地址-----> https://github.com/greenrobot/EventBus
             eventBus        : "org.greenrobot:eventbus:3.0.0",
             //RoundedImageView 代码地址-----> https://github.com/vinc3m1/RoundedImageView
             roundedImageView: "com.makeramen:roundedimageview:2.2.1",
+            //Logger输出显示 代码地址-----> https://github.com/orhanobut/logger
+            logger           : 'com.orhanobut:logger:1.15',
+            //图片加载库 代码地址-----> https://github.com/square/picasso
+            picasso          : 'com.squareup.picasso:picasso:2.5.2',
+            //加强版RecyclerView 代码地址-----> https://github.com/Malinskiy/SuperRecyclerView
+            recyclerView     : 'com.malinskiy:superrecyclerview:1.1.4',
+            //图片裁剪uCrop 代码地址-----> https://github.com/Yalantis/uCrop
+            ucrop            : 'com.yalantis:ucrop:2.2.0',
+            //字符串格式化处理代码库 代码地址-----> https://github.com/square/phrase
+            phrase           : 'com.squareup.phrase:phrase:1.1.0',
+            //数据库帮助库 代码地址-------->https://github.com/jgilfelt/android-sqlite-asset-helper
+            sqliteassethelper: 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1',
+            //GIF动画支持库 代码地址-------->https://github.com/koral--/android-gif-drawable
+            gifDrawable      : 'pl.droidsonroids.gif:android-gif-drawable:1.1.17',
+            //ZXing Bar Code 代码地址-----> https://github.com/zxing/zxing
+            zxing            : 'com.google.zxing:core:3.3.0',
+            zxingCode        : 'com.google.zxing:android-core:3.3.0',
     ]
 }
