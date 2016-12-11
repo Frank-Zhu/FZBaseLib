@@ -2,44 +2,49 @@
 <resources>
 
     <!-- A light Holo shade of blue -->
-    <color name="holo_blue_light">#ff33b5e5</color>
+    <color name="holo_blue_light">@color/mp.theme.primary</color>
     <!-- A light Holo shade of green -->
-    <color name="holo_green_light">#ff99cc00</color>
+    <color name="holo_green_light">@color/mp.btn.green.normal</color>
     <!-- A light Holo shade of red -->
-    <color name="holo_red_light">#ffff4444</color>
+    <color name="holo_red_light">@color/mp.btn.red.normal</color>
     <!-- A light Holo shade of orange -->
-    <color name="holo_orange_light">#ffffbb33</color>
+    <color name="holo_orange_light">@color/mp.text.coupon</color>
 
     <color name="white">@android:color/white</color>
+    <color name="transparent">#00000000</color>
 
-    <!--      主体分格颜色               -->
-    <color name="primary">#FA007A</color>
-    <color name="primary_dark">@color/primary</color>
-    <color name="color_accent">#1E85FF</color>
-    <color name="color_accent_dark">#22C3BF</color>
-    <color name="gary_primary">#f8f8f8</color>
-    <color name="gary_primary_dark">#323232</color>
+    <!--      主体风格颜色               -->
+    <color name="mp.theme.primary">#1779EC</color>
+    <color name="mp.theme.primary_dark">#1361BA</color>
+    <color name="mp.theme.color_accent">@color/mp.text.coupon</color>
 
     <!--      字体颜色               -->
-    <color name="primary_text_color">#323232</color>
-    <color name="secondary_text_color">#969696</color>
-    <color name="third_text_color">#B4B4B4</color>
-    <color name="color_accent_text_color">#FEE5F1</color>
-    <color name="label_text_color">@color/primary</color>
-    <color name="hint_text_color">#CCCCCC</color>
-    <color name="error_color">#D50000</color>
-    <color name="title_color">#323232</color>
+    <color name="mp.text.large.title">#FFFFFF</color>
+    <color name="mp.text.title">#333333</color>
+    <color name="mp.text.sub.title">#666666</color>
+    <color name="mp.text.tips">#999999</color>
+    <color name="mp.text.hint">#CCCCCC</color>
+    <color name="mp.text.price">#FF4405</color>
+    <color name="mp.text.coupon">#FF9F00</color>
+    <color name="mp.text.button">#FFFFFF</color>
+    <color name="mp.text.menu.title">#333333</color>
 
-    <!--      分隔线颜色               -->
-    <color name="divider">#EEEEEE</color>
-    <color name="bottom_divider">#D2D2D2</color>
-    <color name="filter_divider">#88CCCCCC</color>
+    <!--      按钮颜色               -->
+    <color name="mp.btn.blue.normal">@color/mp.theme.primary</color>
+    <color name="mp.btn.blue.highlight">@color/mp.theme.primary_dark</color>
+    <color name="mp.btn.green.normal">#3EAD42</color>
+    <color name="mp.btn.green.highlight">#2C7A2F</color>
+    <color name="mp.btn.red.normal">#D5390E</color>
+    <color name="mp.btn.red.highlight">#A32C0B</color>
+    <color name="mp.btn.disable">#CCCCCC</color>
 
-    <color name="window_back_ground">#EEEEEE</color>
-    <color name="color_transparent">#00000000</color>
-    <color name="color_control_highlight">#D50068</color>
-    <color name="disable_button_color">#aaffffff</color>
-    <color name="color_blur_alpha">#aa000000</color>
+    <!--      背景颜色               -->
+    <color name="mp.bg.window">#F5F5F5</color>
+    <color name="mp.bg.toast">#BB262728</color>
+
+    <!--      分割线颜色               -->
+    <color name="mp.divider">#CCCCCC</color>
+    <color name="mp.divider.bottom">#D2D2D2</color>
 
     <drawable name="transparent">#00000000</drawable>
     <drawable name="black_alpha">#77000000</drawable>

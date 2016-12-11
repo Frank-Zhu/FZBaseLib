@@ -37,7 +37,7 @@ public class FZToastHelper {
             // set duration
             toast.setDuration(length);
             // set position
-            int margin = FZBaseApplication.getContext().getResources().getDimensionPixelSize(R.dimen.toast_vertical_margin);
+            int margin = FZBaseApplication.getContext().getResources().getDimensionPixelSize(R.dimen.mp_margin_toast);
             toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_VERTICAL, 0, margin);
             // show toast
             toast.show();

@@ -1,171 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme. -->
-    <style name="FZBaseAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/gary_primary_dark</item>
-        <item name="colorAccent">@color/primary</item>
+        <item name="colorPrimary">@color/mp.theme.primary</item>
+        <item name="colorPrimaryDark">@color/mp.theme.primary_dark</item>
+        <item name="colorAccent">@color/mp.theme.primary</item>
         <item name="android:windowActionBarOverlay">@null</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:actionBarItemBackground">@null</item>
-        <item name="android:windowBackground">@color/window_back_ground</item>
-        <item name="android:actionModeCloseDrawable">@mipmap/ic_action_bar_close</item>
-        <item name="android:textColorPrimary">@color/title_color</item>
-        <item name="actionBarPopupTheme">@style/FZBaseAppTheme.PopupTheme</item>
-        <item name="actionMenuTextColor">@color/title_color</item>
+        <item name="android:windowBackground">@color/mp.bg.window</item>
+        <item name="android:actionModeCloseDrawable">@mipmap/abc_ic_clear_material</item>
+        <item name="android:textColorPrimary">@color/mp.text.large.title</item>
+        <item name="actionBarStyle">@style/MP.Theme.Widget.AppActionBar</item>
+        <item name="actionBarPopupTheme">@style/AppPopupTheme</item>
+        <item name="actionMenuTextColor">@color/mp.text.large.title</item>
         <item name="android:listDivider">@mipmap/ic_list_divider</item>
-        <item name="colorControlNormal">@color/title_color</item>
-        <item name="colorButtonNormal">@color/primary</item>
-        <item name="alertDialogTheme">@style/FZBaseAppTheme.AlertDialogStyle</item>
-        <item name="android:alertDialogTheme">@style/FZBaseAppTheme.AlertDialogStyle</item>
+        <item name="colorControlNormal">@color/mp.text.large.title</item>
+        <item name="colorButtonNormal">@color/mp.theme.primary</item>
+        <item name="alertDialogTheme">@style/MP.Theme.Widget.Dialog</item>
+        <item name="android:alertDialogTheme">@style/MP.Theme.Widget.Dialog</item>
     </style>
 
-    <style name="FZBaseAppTheme.PopupTheme" parent="ThemeOverlay.AppCompat.Light">
-        <item name="colorControlActivated">@color/primary</item>
-        <item name="colorControlHighlight">@color/primary</item>
-        <item name="colorControlNormal">@color/primary_text_color</item>
-        <item name="android:textColorPrimary">@color/menu_text_color</item>
+    <style name="AppPopupTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlActivated">@color/mp.btn.blue.highlight</item>
+        <item name="colorControlHighlight">@color/mp.btn.blue.normal</item>
+        <item name="colorControlNormal">@color/mp.text.menu.title</item>
+        <item name="android:textColorPrimary">@color/mp.text.menu.title</item>
     </style>
 
-    <style name="FZBaseAppTheme.ToolBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme.ToolBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowContentOverlay">@null</item>
-        <item name="colorPrimary">@color/gary_primary</item>
-        <item name="colorPrimaryDark">@color/gary_primary_dark</item>
-        <item name="colorAccent">@color/primary</item>
-        <item name="android:textColorPrimary">@color/title_color</item>
-        <item name="actionMenuTextColor">@color/title_color</item>
-        <item name="android:actionModeCloseDrawable">@mipmap/ic_action_bar_close</item>
-        <item name="colorControlNormal">@color/title_color</item>
-        <item name="android:windowBackground">@color/white</item>
+        <item name="colorPrimary">@color/mp.theme.primary</item>
+        <item name="colorPrimaryDark">@color/mp.theme.primary_dark</item>
+        <item name="colorAccent">@color/mp.theme.primary</item>
+        <item name="android:textColorPrimary">@color/mp.text.large.title</item>
+        <item name="android:windowBackground">@color/mp.bg.window</item>
+        <item name="actionMenuTextColor">@color/mp.text.large.title</item>
+        <item name="android:actionModeCloseDrawable">@mipmap/abc_ic_clear_material</item>
+        <item name="colorControlNormal">@color/mp.text.large.title</item>
         <item name="android:listDivider">@mipmap/ic_list_divider</item>
-        <item name="colorButtonNormal">@color/primary</item>
-        <item name="alertDialogTheme">@style/FZBaseAppTheme.AlertDialogStyle</item>
-        <item name="android:alertDialogTheme">@style/FZBaseAppTheme.AlertDialogStyle</item>
+        <item name="colorButtonNormal">@color/mp.text.large.title</item>
+        <item name="alertDialogTheme">@style/MP.Theme.Widget.Dialog</item>
+        <item name="android:alertDialogTheme">@style/MP.Theme.Widget.Dialog</item>
     </style>
 
-    <style name="FZBaseAppTheme.ToolbarTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">@dimen/title_text_size</item>
-        <item name="android:textColor">@color/title_color</item>
+    <style name="MP.Theme" parent="AppTheme"/>
+
+    <style name="MP.Theme.Widget"/>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+
+    <!-- TextAppearance -->
+
+    <style name="MP.Theme.TextAppearance">
+        <!--<item name="fontPath">@string/mp.font.roboto.monospace.regular</item>-->
     </style>
 
-    <style name="FZBaseAppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="MP.Theme.TextAppearance.Toolbar">
+        <item name="android:textSize">@dimen/mp.text.large.title</item>
+    </style>
 
-    <style name="FZBaseAppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="MP.Theme.TextAppearance.Light.Toolbar.Title" parent="MP.Theme.TextAppearance.Toolbar">
+        <item name="android:textColor">@color/mp.text.large.title</item>
+    </style>
 
-    <style name="FZBaseAppTheme.MatchActivityStyle">
+    <style name="MP.Theme.Widget.Toolbar">
+        <item name="android:id">@id/tool_bar</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?android:attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="titleTextAppearance">@style/MP.Theme.TextAppearance.Light.Toolbar.Title</item>
+    </style>
+
+    <style name="MP.Theme.Widget.AppActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <item name="titleTextStyle">@style/MP.Theme.Widget.ActionBarTitle</item>
+        <item name="android:subtitleTextStyle">@style/MP.Theme.Widget.ActionBarSubTitle</item>
+        <item name="android:actionMenuTextAppearance">@style/MP.Theme.Widget.ActionBarSubTitle
+        </item>
+    </style>
+
+    <style name="MP.Theme.Widget.ActionBarTitle">
+        <item name="android:textColor">@color/mp.text.large.title</item>
+        <item name="android:textSize">@dimen/mp.text.large.title</item>
+    </style>
+
+    <style name="MP.Theme.Widget.ActionBarSubTitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
+        <item name="android:textColor">@color/mp.text.large.title</item>
+        <item name="android:textSize">@dimen/mp.text.title</item>
+    </style>
+
+    <style name="MP.Theme.Widget.Match">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:background">@color/color_transparent</item>
     </style>
 
-    <style name="FZBaseAppTheme.WarpActivityStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/color_transparent</item>
-    </style>
-
-    <style name="FZBaseAppTheme.WarpViewStyle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-    </style>
-
-    <style name="FZBaseAppTheme.MatchViewStyle">
+    <style name="MP.Theme.Widget.Warp">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <!--      标题风格               -->
-    <style name="FZBaseAppTheme.TitleTextStyle" parent="FZBaseAppTheme.WarpViewStyle">
-        <item name="android:textSize">@dimen/primary_text_size</item>
-        <item name="android:textColor">@color/primary_text_color</item>
+    <style name="MP.Theme.Widget.Match.Window">
+        <item name="android:background">@color/transparent</item>
     </style>
 
-    <!--      正文一级标题风格               -->
-    <style name="FZBaseAppTheme.NormalTextStyle" parent="FZBaseAppTheme.WarpViewStyle">
-        <item name="android:textSize">@dimen/normal_text_size</item>
-        <item name="android:textColor">@color/primary_text_color</item>
+    <style name="MP.Theme.Widget.Warp.Window">
+        <item name="android:background">@color/transparent</item>
     </style>
 
-    <!--      正文二级标题风格               -->
-    <style name="FZBaseAppTheme.SecondaryTextStyle" parent="FZBaseAppTheme.WarpViewStyle">
-        <item name="android:textSize">@dimen/second_text_size</item>
-        <item name="android:textColor">@color/secondary_text_color</item>
-    </style>
-
-    <!--      普通按钮不带间距风格               -->
-    <style name="FZBaseAppTheme.NormalButtonStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/button_height</item>
-        <item name="android:textColor">@color/button_text_color</item>
-        <item name="android:textSize">@dimen/title_text_size</item>
-        <item name="android:gravity">center</item>
-        <item name="android:theme">@style/FZBaseAppTheme.ButtonTheme</item>
-    </style>
-
-    <style name="FZBaseAppTheme.ButtonTheme" parent="Theme.AppCompat.Light">
-        <item name="colorControlHighlight">@color/color_control_highlight</item>
-        <item name="colorButtonNormal">@color/primary</item>
-    </style>
-
-    <style name="FZBaseAppTheme.WhiteButtonTheme" parent="Theme.AppCompat.Light">
-        <item name="colorControlHighlight">@color/white</item>
-        <item name="colorButtonNormal">@color/white</item>
-    </style>
-
-    <!--      普通按钮带间距风格               -->
-    <style name="FZBaseAppTheme.NormalButtonMarginStyle" parent="FZBaseAppTheme.NormalButtonStyle">
-        <item name="android:layout_margin">@dimen/larger_larger_view_margin</item>
-    </style>
-
-    <!--      普通按钮不带间距风格               -->
-    <style name="FZBaseAppTheme.SmallButtonStyle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/button_text_color</item>
-        <item name="android:textSize">@dimen/primary_text_size</item>
-        <item name="android:gravity">center</item>
-        <item name="android:theme">@style/FZBaseAppTheme.ButtonTheme</item>
-        <item name="android:paddingTop">@dimen/middle_view_margin</item>
-        <item name="android:paddingBottom">@dimen/middle_view_margin</item>
-        <item name="android:paddingLeft">@dimen/root_view_margin</item>
-        <item name="android:paddingRight">@dimen/root_view_margin</item>
-        <item name="android:minWidth">100dp</item>
-    </style>
-
-    <style name="FZBaseAppTheme.NormalEditTextStyle">
+    <style name="MP.Theme.TextAppearance.Match">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MP.Theme.TextAppearance.Match.Title">
+        <item name="android:textSize">@dimen/mp.text.title</item>
+        <item name="android:textColor">@color/mp.text.title</item>
         <item name="android:singleLine">true</item>
-        <item name="android:textColor">@color/primary_text_color</item>
-        <item name="android:textColorHint">@color/hint_text_color</item>
-        <item name="android:textSize">@dimen/primary_text_size</item>
     </style>
 
-    <!--Input field style-->
-    <style name="FZBaseAppTheme.EditTextStyle" parent="Theme.AppCompat.Light">
-        <item name="colorControlNormal">@color/hint_text_color</item>
-        <item name="colorControlActivated">@color/primary</item>
+    <style name="MP.Theme.TextAppearance.Match.Title.Sub">
+        <item name="android:textSize">@dimen/mp.text.sub.title</item>
+        <item name="android:textColor">@color/mp.text.sub.title</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="MP.Theme.TextAppearance.Match.Tips">
+        <item name="android:textSize">@dimen/mp.text.tips</item>
+        <item name="android:textColor">@color/mp.text.tips</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="MP.Theme.TextAppearance.Match.Hint">
+        <item name="android:textSize">@dimen/mp.text.hint</item>
+        <item name="android:textColor">@color/mp.text.hint</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="MP.Theme.TextAppearance.Wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="MP.Theme.TextAppearance.Wrap.Title">
+        <item name="android:textSize">@dimen/mp.text.title</item>
+        <item name="android:textColor">@color/mp.text.title</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="MP.Theme.TextAppearance.Wrap.Title.Sub">
+        <item name="android:textSize">@dimen/mp.text.sub.title</item>
+        <item name="android:textColor">@color/mp.text.sub.title</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="MP.Theme.TextAppearance.Wrap.Tips">
+        <item name="android:textSize">@dimen/mp.text.tips</item>
+        <item name="android:textColor">@color/mp.text.tips</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="MP.Theme.TextAppearance.Wrap.Hint">
+        <item name="android:textSize">@dimen/mp.text.hint</item>
+        <item name="android:textColor">@color/mp.text.hint</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="MP.Theme.Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/mp.button.height</item>
+        <item name="android:textColor">@color/mp.text.button</item>
+        <item name="android:textSize">@dimen/mp.text.button</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">@dimen/mp.button.margin</item>
+        <item name="android:layout_marginRight">@dimen/mp.button.margin</item>
+    </style>
+
+    <style name="MP.Theme.Widget.Button.Blue">
+        <item name="android:theme">@style/MP.Theme.Widget.Button.Theme.Blue</item>
+    </style>
+
+    <style name="MP.Theme.Widget.Button.Green">
+        <item name="android:theme">@style/MP.Theme.Widget.Button.Theme.Green</item>
+    </style>
+
+    <style name="MP.Theme.Widget.Button.Red">
+        <item name="android:theme">@style/MP.Theme.Widget.Button.Theme.Red</item>
+    </style>
+
+    <style name="MP.Theme.Widget.Button.Theme" parent="Theme.AppCompat.Light"/>
+
+    <style name="MP.Theme.Widget.Button.Theme.Blue">
+        <item name="colorControlHighlight">@color/mp.btn.blue.highlight</item>
+        <item name="colorButtonNormal">@drawable/select_button_blue</item>
+    </style>
+
+    <style name="MP.Theme.Widget.Button.Theme.Green">
+        <item name="colorControlHighlight">@color/mp.btn.green.highlight</item>
+        <item name="colorButtonNormal">@drawable/select_button_green</item>
+    </style>
+
+    <style name="MP.Theme.Widget.Button.Theme.Red">
+        <item name="colorControlHighlight">@color/mp.btn.red.highlight</item>
+        <item name="colorButtonNormal">@drawable/select_button_red</item>
+    </style>
+
+    <!--      卡片布局风格               -->
+    <style name="MP.Theme.Widget.Card">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardElevation">0dp</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="cardCornerRadius">@dimen/mp.card.radius</item>
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+    <!--      没有阴影效果的卡片布局风格               -->
+    <style name="MP.Theme.Widget.Card.NoElevation">
+        <item name="android:layout_marginLeft">@dimen/mp.card.margin</item>
+        <item name="android:layout_marginRight">@dimen/mp.card.margin</item>
+        <item name="cardCornerRadius">0dp</item>
+        <item name="cardUseCompatPadding">false</item>
+        <item name="cardPreventCornerOverlap">false</item>
     </style>
 
     <!--      波纹选择效果Item风格               -->
-    <style name="FZBaseAppTheme.SelectLayoutStyle">
+    <style name="MP.Theme.Widget.Item">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingTop">@dimen/middle_view_margin</item>
-        <item name="android:paddingBottom">@dimen/middle_view_margin</item>
-        <item name="android:paddingLeft">@dimen/root_view_margin</item>
-        <item name="android:paddingRight">@dimen/root_view_margin</item>
+        <item name="android:padding">@dimen/mp.padding.xlarge</item>
         <item name="android:background">?selectableItemBackground</item>
         <item name="android:foreground">?attr/selectableItemBackground</item>
     </style>
 
-    <style name="FZBaseAppTheme.AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <!-- Used for the buttons -->
-        <item name="colorAccent">@color/primary</item>
-        <!-- Used for the title and text -->
-        <item name="android:textColorPrimary">@color/primary_text_color</item>
-        <!-- Used for the background -->
+    <style name="MP.Theme.Widget.Dialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/mp.theme.primary</item>
+        <item name="android:textColorPrimary">@color/mp.text.title</item>
         <item name="android:background">@color/white</item>
     </style>
 </resources>

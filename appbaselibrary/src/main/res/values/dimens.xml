@@ -1,35 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Common -->
+    <dimen name="mp.divider.line">1px</dimen>
+    <dimen name="mp.divider.so_mall">2dp</dimen>
+    <dimen name="mp.divider.small">4dp</dimen>
+    <dimen name="mp.divider.normal">8dp</dimen>
+    <dimen name="mp.divider.middle">12dp</dimen>
+    <dimen name="mp.divider.large">16dp</dimen>
+    <dimen name="mp.divider.xlarge">20dp</dimen>
+    <dimen name="mp.divider.xxlarge">24dp</dimen>
+
+    <dimen name="mp.padding.so_small">2dp</dimen>
+    <dimen name="mp.padding.small">4dp</dimen>
+    <dimen name="mp.padding.normal">8dp</dimen>
+    <dimen name="mp.padding.middle">12dp</dimen>
+    <dimen name="mp.padding.large">16dp</dimen>
+    <dimen name="mp.padding.xlarge">20dp</dimen>
+    <dimen name="mp.padding.xxlarge">24dp</dimen>
+
+    <dimen name="mp.margin.so_small">2dp</dimen>
+    <dimen name="mp.margin.small">4dp</dimen>
+    <dimen name="mp.margin.normal">8dp</dimen>
+    <dimen name="mp.margin.middle">12dp</dimen>
+    <dimen name="mp.margin.large">16dp</dimen>
+    <dimen name="mp.margin.xlarge">20dp</dimen>
+    <dimen name="mp.margin.xxlarge">24dp</dimen>
+
     <!--  涉及到的字体大小  -->
-    <dimen name="title_text_size">18sp</dimen>
-    <dimen name="primary_text_size">16sp</dimen>
-    <dimen name="normal_text_size">14sp</dimen>
-    <dimen name="second_text_size">12sp</dimen>
-    <dimen name="small_text_size">10sp</dimen>
+    <!--  大标题字体  -->
+    <dimen name="mp.text.large.title">20sp</dimen>
+    <!--  主文本字体  -->
+    <dimen name="mp.text.title">18sp</dimen>
+    <!--  副文本 大段提示类文字 -->
+    <dimen name="mp.text.sub.title">16sp</dimen>
+    <!--  不太重要的提示文字 -->
+    <dimen name="mp.text.tips">14sp</dimen>
+    <!--  输入栏提示信息  -->
+    <dimen name="mp.text.hint">18sp</dimen>
+    <dimen name="mp.text.button">18sp</dimen>
+    <dimen name="mp.text.large.number">50sp</dimen>
+    <dimen name="mp.text.number">30sp</dimen>
 
-    <!--  分割线高度  -->
-    <dimen name="larger_divider_height">10px</dimen>
-    <dimen name="small_divider_height">1px</dimen>
-    <dimen name="bottom_divider_height">1dp</dimen>
+    <dimen name="mp.home.button.height">96dp</dimen>
+    <dimen name="mp.button.height">58dp</dimen>
+    <dimen name="mp.button.margin">8dp</dimen>
 
-    <!--  涉及到的View间距大小  -->
-    <dimen name="root_view_margin">12dp</dimen>
-    <dimen name="middle_view_margin">8dp</dimen>
-    <dimen name="small_view_margin">4dp</dimen>
-    <dimen name="larger_view_margin">16dp</dimen>
-    <dimen name="larger_larger_view_margin">20dp</dimen>
-    <dimen name="small_drawable_padding">4dp</dimen>
-    <dimen name="drawable_padding">8dp</dimen>
-    <dimen name="larger_drawable_padding">16dp</dimen>
-    <dimen name="text_view_margin">2dp</dimen>
+    <dimen name="mp.card.radius">4dp</dimen>
+    <dimen name="mp.card.margin">-3dp</dimen>
+    <dimen name="mp.card.padding">8dp</dimen>
 
-    <dimen name="toast_vertical_margin">80dp</dimen>
-
-    <dimen name="card_margin_horizontal">-3dp</dimen>
-    <dimen name="card_compat_padding">8dp</dimen>
-
-    <dimen name="small_button_height">48dp</dimen>
-    <dimen name="button_height">58dp</dimen>
-    <dimen name="tabs_height">48dp</dimen>
-    <dimen name="card_corner_radius">4dp</dimen>
+    <dimen name="mp.margin.toast">80dp</dimen>
+    <dimen name="mp.toast.min.size">120dp</dimen>
 </resources>

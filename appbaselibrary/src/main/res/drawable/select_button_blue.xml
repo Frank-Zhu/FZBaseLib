@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Disable background -->
+    <item android:color="@color/mp.btn.disable"
+          android:state_enabled="false"/>
+
+    <!-- Enabled background -->
+    <item android:color="@color/mp.btn.blue.normal"/>
+</selector>

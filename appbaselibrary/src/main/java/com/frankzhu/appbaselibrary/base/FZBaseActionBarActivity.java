@@ -60,7 +60,7 @@ public class FZBaseActionBarActivity extends AppCompatActivity {
      * 显示返回按钮 <-
      */
     protected void showBackActionBar() {
-        showBackActionBar(R.color.title_color);
+        showBackActionBar(R.color.mp_text_large_title);
     }
 
     /**
@@ -91,7 +91,7 @@ public class FZBaseActionBarActivity extends AppCompatActivity {
      * 显示关闭按钮 X
      */
     protected void showXActionBar() {
-        showXActionBar(R.color.title_color);
+        showXActionBar(R.color.mp_text_large_title);
     }
 
     /**

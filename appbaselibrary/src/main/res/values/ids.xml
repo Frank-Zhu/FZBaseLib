@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="mp.card.margin">0dp</dimen>
+    <item name="tool_bar" type="id"/>
 </resources>

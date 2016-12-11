@@ -2,9 +2,7 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           android:id="@+id/tv_empty"
-          style="@style/FZBaseAppTheme.SecondaryTextStyle"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
+          style="@style/MP.Theme.TextAppearance.Match.Title.Sub"
           android:gravity="center"
-          android:padding="@dimen/root_view_margin"
+          android:padding="@dimen/mp.padding.large"
           tools:text="没有更多内容了"/>
